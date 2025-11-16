@@ -105,7 +105,7 @@
             <div id="output-section" class="hidden">
                 <h2 class="text-lg font-semibold mb-2">Output</h2>
                 <!-- This is the container that will be converted to an image -->
-                <div id="output-image-area" class="bg-black p-4 rounded-lg">
+                <div id="output-image-area" class="bg-white p-4 rounded-lg text-black">
                     <pre id="output-container" class="text-white whitespace-pre-wrap break-words font-mono"></pre>
                     <div id="plot-output-container" class="mt-4 flex justify-center"></div>
                 </div>
@@ -274,9 +274,9 @@
                 copyStatus.textContent = 'Copying...';
                 try {
                     const canvas = await html2canvas(outputImageArea, {
-                        backgroundColor: '#000000',
+                        backgroundColor: '#FFFFFF',
                         scale: 2
-                    });
+                    });    
                     canvas.toBlob(async (blob) => {
                         try {
                             await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
